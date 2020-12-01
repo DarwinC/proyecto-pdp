@@ -105,14 +105,6 @@ matriculas;
   }
 
   obtenerMatricula(idmatricula) {
-    let matricula_tmp = "";
-    console.log("El usuario a buscar" + idmatricula);
-    let matricula  = this.matriculasService.getMatriculaById(idmatricula);
-    if (matricula!= null) {
-      console.log("Encuentra la matricula" + matricula);
-      console.log(matricula);
-      matricula_tmp = matricula["serie"];
-    }
-    return matricula_tmp;
+  return this.matriculas.find(element=>element['_id']===idmatricula)['serie'];
   }
 }
