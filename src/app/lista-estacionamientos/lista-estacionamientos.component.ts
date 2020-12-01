@@ -112,7 +112,7 @@ export class ListaEstacionamientosComponent implements OnInit {
   formatearFecha(fecha) {
     let fechaDate = new Date(fecha);
 
-    let day = fechaDate.getDate();
+    let day = (fechaDate.getDate()<10)?'0'+(fechaDate.getDate()).toString():fechaDate.getDate().toString();
     let month = ((fechaDate.getMonth() + 1)<10)?'0'+(fechaDate.getMonth() + 1).toString():(fechaDate.getMonth() + 1).toString();
     let year = fechaDate.getFullYear();
     let hour = (fechaDate.getHours()<10)?'0'+(fechaDate.getHours()).toString():fechaDate.getHours().toString();
