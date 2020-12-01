@@ -1,3 +1,25 @@
-<p>
-lista-estacionamientos works!
-</p>
+<h2>Estacionamientos</h2>
+<br>
+<br>
+<div class="rTable">
+	<div class="rTableRow">
+		<div class="rTableHead"><strong>Matricula</strong></div>
+		<div class="rTableHead"><strong>Inicio</strong></div>
+    <div class="rTableHead"><strong>Fin</strong></div>
+		<div class="rTableHead"><strong>Usuario</strong></div>
+    <div class="rTableHead"><strong>Creado</strong></div>
+	</div>
+
+	<div class="rTableRow" *ngFor="let estacionamiento of estacionamientos">
+		<div class="rTableCell">{{estacionamiento.matricula}}</div>
+    <div class="rTableCell">{{estacionamiento.fecha_hora_inicio}}</div>
+    <div class="rTableCell">{{estacionamiento.fecha_hora_fin}}</div>
+    <div class="rTableCell">{{estacionamiento.usuarioMovil}}</div>
+    <div class="rTableCell">{{estacionamiento.fecha_hora}}</div>
+
+	</div>
+</div>
+
+<!--//*
+<button class="btn btn-primary" (click)="clickMe()" > click me </button>
+*//-->
