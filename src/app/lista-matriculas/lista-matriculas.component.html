@@ -12,7 +12,7 @@
 
 	<div class="rTableRow" *ngFor="let matricula of matriculas">
 		<div class="rTableCell">{{matricula.serie}}</div>
-		<div class="rTableCell">{{obtenerUsuario(matricula.usuarioMovil)}}</div>
+		<div class="rTableCell">{{obtenerEmailUsuarioById(matricula.usuarioMovil)}}</div>
 		<div class="rTableCell">
       <button (click)="eliminar(matricula._id)">Eliminar</button>
       <button (click)="modificar(matricula._id)">Modificar</button>

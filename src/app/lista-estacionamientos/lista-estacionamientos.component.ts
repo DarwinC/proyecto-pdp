@@ -11,6 +11,8 @@ import { MatriculasService } from "../services/matriculas.service";
 })
 export class ListaEstacionamientosComponent implements OnInit {
   estacionamientos;
+usuarios;
+matriculas;
 
   constructor(
     private estacionamientosService: EstacionamientosService,
@@ -43,6 +45,40 @@ export class ListaEstacionamientosComponent implements OnInit {
       }
     );
   }
+
+
+  obtenerMatriculas() {
+    this.matriculasService.getAll().subscribe(
+      a => {
+        console.log(a);
+        this.matriculas = a;
+        this.obtenerEstacionamientos();
+        console.log("Se consulto el listado de matriculas");
+      },
+      err => {
+        if (err.status === 500) {
+          console.log("Ha ocurrido un error en el servidor");
+        }
+      }
+    );
+  }
+
+  obtenerUsuarios() {
+    this.usuariosService.getAll().subscribe(
+      a => {
+        console.log(a);
+        this.usuarios = a;
+        this.obtenerMatriculas();
+        console.log("Se consulto el listado de usuarios");
+      },
+      err => {
+        if (err.status === 500) {
+          console.log("Ha ocurrido un error en el servidor");
+        }
+      }
+    );
+  }
+
 /*
   eliminar(idestacionamiento) {
 
@@ -63,19 +99,9 @@ export class ListaEstacionamientosComponent implements OnInit {
     this.router.navigate(["matriculas/modificar/"]);
   }
 */
-  obtenerUsuario(idusuario) {
-    let email = "";
-    console.log("El usuario a buscar" + idusuario);
-    const usuario_tmp = this.usuariosService.getUsuarioById(idusuario);
-
-    console.log(usuario_tmp);
-
-    if (usuario_tmp["usr"] != null) {
-      console.log("Encuentra el usuario" + usuario_tmp["usr"]);
-      console.log(usuario_tmp["usr"]["email"]);
-      email = usuario_tmp["usr"]["email"];
-    }
-    return email;
+  
+  obtenerEmailUsuarioById(idusuario){
+    return this.usuarios.find(element=>element['_id']===idusuario)['email'];
   }
 
   obtenerMatricula(idmatricula) {
