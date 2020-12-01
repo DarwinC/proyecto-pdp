@@ -24,6 +24,7 @@ export class ListaEstacionamientosComponent implements OnInit {
     ) {
       this.router.navigate([""]);
     }
+    this.obtenerEstacionamientos();
   }
 
   obtenerEstacionamientos() {
