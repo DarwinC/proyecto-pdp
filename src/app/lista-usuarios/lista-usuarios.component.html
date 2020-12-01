@@ -18,38 +18,38 @@
 		<div class="rTableCell">{{usuario.email}}</div>
 		<div class="rTableCell">{{usuario.nombre}}</div>
 		<div class="rTableCell">{{usuario.apellido}}</div>
-    <div class="rTableCell">{{usuario.tipo}}</div>
+		<div class="rTableCell">{{usuario.tipo}}</div>
 		<div class="rTableCell">{{usuario.estado}}</div>
 		<div class="rTableCell">{{usuario.telefono}}</div>
 		<div class="rTableCell">
-			
-		<ng-container *ngIf="EsActivo(usuario);then thenBlock else elseBlock">
-		</ng-container>
-		<ng-template #thenBlock>
-			
+
+			<ng-container *ngIf="EsActivo(usuario);then thenBlock else elseBlock">
+			</ng-container>
+			<ng-template #thenBlock>
+
 				<button (click)="Baja(usuario._id)">Inhabilitar</button>
-	
-		</ng-template>
-		<ng-template #elseBlock>
-		
+
+			</ng-template>
+			<ng-template #elseBlock>
+
 				<button (click)="Alta(usuario._id)">Habilitar</button>
-			
-		</ng-template>
-<div>
-  <!--//*
-    <button style="margin-left:20px" (click)="modificar(usuario._id)">Modificar</button>
-    </div>
-    *//-->
-	</div>
-		<!--//*
-		<div class="rTableCell" *ngIf="usuario.estado=="ACTIVO";then thenBlock else elseBlock">
+
+			</ng-template>
+			<!--//*
+        <div>
+      <button style="margin-left:20px" (click)="modificar(usuario._id)">Modificar</button>
+      </div>
+      *//-->
+		</div>
+		  <!--//*
+	  	<div class="rTableCell" *ngIf="usuario.estado=="ACTIVO";then thenBlock else elseBlock">
 			<ng-template #thenBlock>
 				<button (click)="Baja(usuario._id)">Baja</button>
 			</ng-template>
 			<ng-template #elseBlock>
 				<button (click)="modificar(usuario._id)">Modificar</button>
 			</ng-template>
-		</div>*//-->
+		  </div>*//-->
 
 	</div>
 </div>
