@@ -11,8 +11,8 @@ import { MatriculasService } from "../services/matriculas.service";
 })
 export class ListaEstacionamientosComponent implements OnInit {
   estacionamientos;
-usuarios;
-matriculas;
+  usuarios;
+  matriculas;
 
   constructor(
     private estacionamientosService: EstacionamientosService,
@@ -28,7 +28,7 @@ matriculas;
     ) {
       this.router.navigate([""]);
     }
-    this.obtenerEstacionamientos();
+    this.obtenerUsuarios();
   }
 
   obtenerEstacionamientos() {
@@ -36,7 +36,7 @@ matriculas;
       a => {
         console.log(a);
         this.estacionamientos = a;
-        console.log("Se consulto el listado de matriculas");
+        console.log("Se consulto el listado de estacionamientos");
       },
       err => {
         if (err.status === 500) {
@@ -45,7 +45,6 @@ matriculas;
       }
     );
   }
-
 
   obtenerMatriculas() {
     this.matriculasService.getAll().subscribe(
@@ -79,7 +78,7 @@ matriculas;
     );
   }
 
-/*
+  /*
   eliminar(idestacionamiento) {
 
     this.estacionamientosService.remove(idestacionamiento).subscribe(
@@ -93,18 +92,20 @@ matriculas;
     );
   }
   */
-/*
+  /*
   modificar(idestacionamiento) {
     this.estacionamientosService.setEstacionamientoId(idestacionamiento);
     this.router.navigate(["matriculas/modificar/"]);
   }
 */
-  
-  obtenerEmailUsuarioById(idusuario){
-    return this.usuarios.find(element=>element['_id']===idusuario)['email'];
+
+  obtenerEmailUsuarioById(idusuario) {
+    return this.usuarios.find(element => element["_id"] === idusuario)["email"];
   }
 
   obtenerMatricula(idmatricula) {
-  return this.matriculas.find(element=>element['_id']===idmatricula)['serie'];
+    return this.matriculas.find(element => element["_id"] === idmatricula)[
+      "serie"
+    ];
   }
 }
