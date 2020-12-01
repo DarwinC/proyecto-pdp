@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { UsuarioService } from "../services/usuario.service";
 import { EstacionamientosService } from "../services/estacionamientos.service";
+import { MatriculasService } from "../services/matriculas.service";
 
 @Component({
   selector: "app-lista-estacionamientos",
@@ -13,6 +14,7 @@ export class ListaEstacionamientosComponent implements OnInit {
 
   constructor(
     private estacionamientosService: EstacionamientosService,
+    private matriculasService: MatriculasService,
     private router: Router,
     private usuariosService: UsuarioService
   ) {}
@@ -74,5 +76,17 @@ export class ListaEstacionamientosComponent implements OnInit {
       email = usuario_tmp["usr"]["email"];
     }
     return email;
+  }
+
+  obtenerMatricula(idmatricula) {
+    let matricula_tmp = "";
+    console.log("El usuario a buscar" + idmatricula);
+    let matricula  = this.matriculasService.getMatriculaById(idmatricula);
+    if (matricula!= null) {
+      console.log("Encuentra la matricula" + matricula);
+      console.log(matricula);
+      matricula_tmp = matricula["serie"];
+    }
+    return matricula_tmp;
   }
 }

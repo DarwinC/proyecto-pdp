@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="rTableRow" *ngFor="let estacionamiento of estacionamientos">
-		<div class="rTableCell">{{estacionamiento.matricula}}</div>
+		<div class="rTableCell">{{obtenerMatricula(estacionamiento.matricula)}}</div>
     <div class="rTableCell">{{estacionamiento.fecha_hora_inicio}}</div>
     <div class="rTableCell">{{estacionamiento.fecha_hora_fin}}</div>
     <div class="rTableCell">{{estacionamiento.usuarioMovil}}</div>
