@@ -1,0 +1,53 @@
+<h2>Usuarios</h2>
+<br>
+<br>
+<div class="rTable">
+	<div class="rTableRow">
+		<div class="rTableHead"><strong>Email</strong></div>
+		<div class="rTableHead"><strong>Nombre</strong></div>
+		<!--//*<div class="rTableHead"><strong>Fecha creación</strong></div>*//-->
+		<div class="rTableHead"><strong>Apellido</strong></div>
+		<div class="rTableHead"><strong>Tipo</strong></div>
+		<div class="rTableHead"><strong>Estado</strong></div>
+		<div class="rTableHead"><strong>Teléfono</strong></div>
+		<div class="rTableHead"><strong>Acciones</strong></div>
+
+	</div>
+
+	<div class="rTableRow" *ngFor="let usuario of usuarios">
+		<div class="rTableCell">{{usuario.email}}</div>
+		<div class="rTableCell">{{usuario.nombre}}</div>
+		<div class="rTableCell">{{usuario.apellido}}</div>
+		<div class="rTableCell">{{usuario.estado}}</div>
+		<div class="rTableCell">{{usuario.telefono}}</div>
+		<div class="rTableCell">
+			
+		<ng-container *ngIf="EsActivo(usuario);then thenBlock else elseBlock">
+		</ng-container>
+
+		<ng-template #thenBlock>
+			<div>
+				<button (click)="Baja(usuario._id)">Inhabilitar</button>
+			</div>
+		</ng-template>
+		<ng-template #elseBlock>
+			<div>
+				<button (click)="Alta(usuario._id)">Habilitar</button>
+			</div>
+		</ng-template>
+<div>
+    <button (click)="modificar(usuario._id)">Modificar</button>
+    </div>
+	</div>
+		<!--//*
+		<div class="rTableCell" *ngIf="usuario.estado=="ACTIVO";then thenBlock else elseBlock">
+			<ng-template #thenBlock>
+				<button (click)="Baja(usuario._id)">Baja</button>
+			</ng-template>
+			<ng-template #elseBlock>
+				<button (click)="modificar(usuario._id)">Modificar</button>
+			</ng-template>
+		</div>*//-->
+
+	</div>
+</div>

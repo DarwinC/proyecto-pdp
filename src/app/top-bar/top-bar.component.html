@@ -1,0 +1,9 @@
+<h3>Matricula-E</h3>
+<ul *ngIf="logueado()">
+  <li><a [routerLink]="['matriculas']">Matriculas</a></li>
+  <li><a [routerLink]="['estacionamientos']">Estacionamientos</a></li>
+  <li><a [routerLink]="['usuarios']">Usuarios</a></li>
+  <!--<ul class="dropdown">-->
+  <li><a (click)="logOut()"> {{usuarioLogueado()}}</a></li>
+  <!--</ul>-->
+</ul>

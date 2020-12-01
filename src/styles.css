@@ -1,0 +1,264 @@
+/* Global Styles */
+
+* {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #616161;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: table;
+  margin: auto;
+  flex-direction: row;
+  box-shadow: 2.25px 0.1px 4px black;
+  padding: 10px;
+}
+
+
+.container #form_login {
+  /* display: table-cell;*/
+   text-align: center;
+   vertical-align: middle;
+}
+
+.container #form_add_gasto {
+  /* display: table-cell;*/
+   text-align: center;
+   vertical-align: middle;
+}
+
+.container #form_registro {
+  /* display: table-cell;*/
+   text-align: center;
+   vertical-align: middle;
+}
+
+.basic-container {
+  padding: 5px;
+}
+
+.version-info {
+  font-size: 8pt;
+  /*float: right;*/
+}
+
+router-outlet + *  {
+  padding: 0 16px;
+}
+
+/* Text */
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h1, h2 {
+  font-weight: lighter;
+}
+
+p {
+  font-size: 14px;
+}
+
+/* Hyperlink */
+
+a {
+  cursor: pointer;
+  color: #1976d2;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Input */
+
+input {
+  font-size: 14px;
+  border-radius: 2px;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #BDBDBD;
+}
+
+label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: block;
+  text-transform: uppercase;
+}
+
+/* Button */
+.button, button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+}
+
+.button:hover, button:hover {
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.button:disabled, button:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+/* Fancy Button */
+
+.fancy-button {
+  background-color: white;
+  color: #1976d2;
+}
+
+.fancy-button i.material-icons {
+  color: #1976d2;
+  padding-right: 4px;
+}
+
+/* Top Bar */
+
+app-top-bar {
+  width: 100%;
+  height: 68px;
+  background-color: #1976d2;
+  padding: 16px;
+  display: flex;
+  
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+app-top-bar h3{
+  color: #fff;
+}
+
+app-top-bar ul li{
+  display: inline;
+  padding: 5px;
+  margin: 5px;
+  font-size: 12px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+app-top-bar ul li ul {
+  background: orange;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+}
+
+app-top-bar ul li:hover > ul,
+app-top-bar ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+}
+
+app-top-bar ul li ul li {
+  clear: both;
+  width: 100%;
+}
+
+app-top-bar h1 {
+  color: white;
+  margin: 0;
+}
+
+/* Checkout Cart, Shipping Prices */
+
+.cart-item, .shipping-item {
+  width: 100%;
+  min-width: 400px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 32px;
+  margin-bottom: 8px;
+  border-radius: 2px;
+  background-color: #EEEEEE;
+}
+
+/* Tablas*/
+
+.rTable {
+   display: table;
+   width: 100%;
+}
+.rTableRow {
+   display: table-row;
+}
+.rTableHeading {
+   display: table-header-group;
+   background-color: #ddd;
+}
+.rTableCell, .rTableHead {
+   display: table-cell;
+   padding: 3px 10px;
+   border: 1px solid #999999;
+}
+.rTableHeading {
+   display: table-header-group;
+   background-color: #ddd;
+   font-weight: bold;
+}
+.rTableFoot {
+   display: table-footer-group;
+   font-weight: bold;
+   background-color: #ddd;
+}
+.rTableBody {
+   display: table-row-group;
+}
+
+/* footer*/
+app-footer{
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  background-color: #1976d2;
+  padding: 16px;
+  display: flex;
+  
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+app-footer p{
+    color: rgb(209, 205, 205);
+    font-size: 12px;
+    margin: 0;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/

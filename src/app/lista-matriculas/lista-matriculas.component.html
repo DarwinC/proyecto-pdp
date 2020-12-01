@@ -1,0 +1,25 @@
+<h2>Matriculas</h2>
+<br>
+<br>
+<div class="rTable">
+	<div class="rTableRow">
+		<div class="rTableHead"><strong>Serie</strong></div>
+		<!--//*<div class="rTableHead"><strong>Fecha creación</strong></div>*//-->
+		<div class="rTableHead"><strong>Usuario</strong></div>
+		
+		<div class="rTableHead"><strong>Acciones</strong></div>
+	</div>
+
+	<div class="rTableRow" *ngFor="let matricula of matriculas">
+		<div class="rTableCell">{{matricula.serie}}</div>
+		<div class="rTableCell">{{obtenerUsuario(matricula.usuarioMovil)}}</div>
+		<div class="rTableCell">
+      <button (click)="eliminar(matricula._id)">Eliminar</button>
+      <button (click)="modificar(matricula._id)">Modificar</button>
+    </div>
+	</div>
+</div>
+
+<!--//*
+<button class="btn btn-primary" (click)="clickMe()" > click me </button>
+*//-->

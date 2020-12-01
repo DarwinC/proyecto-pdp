@@ -1,0 +1,17 @@
+<div id="form_update_matricula">
+<h3>Modificar matricula</h3>
+
+<form [formGroup]="updateMatriculaForm" (ngSubmit)="onSubmit(updateMatriculaForm.value)">
+  <div>
+    <label for="serie">
+      Serie
+    </label>
+
+    <input id="serie" type="text" formControlName="serie">
+  </div>
+
+  <h3 *ngIf="errMsg">{{errMsg}}</h3>
+<br>
+  <button class="button" type="submit">Guardar cambios</button>
+</form>
+</div>
