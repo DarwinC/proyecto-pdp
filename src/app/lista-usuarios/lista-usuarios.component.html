@@ -18,22 +18,22 @@
 		<div class="rTableCell">{{usuario.email}}</div>
 		<div class="rTableCell">{{usuario.nombre}}</div>
 		<div class="rTableCell">{{usuario.apellido}}</div>
+    <div class="rTableCell">{{usuario.tipo}}</div>
 		<div class="rTableCell">{{usuario.estado}}</div>
 		<div class="rTableCell">{{usuario.telefono}}</div>
 		<div class="rTableCell">
 			
 		<ng-container *ngIf="EsActivo(usuario);then thenBlock else elseBlock">
 		</ng-container>
-
 		<ng-template #thenBlock>
-			<div>
+			
 				<button (click)="Baja(usuario._id)">Inhabilitar</button>
-			</div>
+	
 		</ng-template>
 		<ng-template #elseBlock>
-			<div>
+		
 				<button (click)="Alta(usuario._id)">Habilitar</button>
-			</div>
+			
 		</ng-template>
 <div>
     <button (click)="modificar(usuario._id)">Modificar</button>
