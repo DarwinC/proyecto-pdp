@@ -108,4 +108,17 @@ export class ListaEstacionamientosComponent implements OnInit {
       "serie"
     ];
   }
+
+  formatearFecha(fecha) {
+    let fechaDate = new Date(fecha);
+
+    let day = fechaDate.getDate();
+    let month = fechaDate.getMonth() + 1;
+    let year = fechaDate.getFullYear();
+    let hour = fechaDate.getHours();
+    let min = fechaDate.getMinutes();
+    let sec = fechaDate.getSeconds();
+    console.log(`${day}-0${month}-${year} ${hour}:${min}:${sec}`);
+    return `${day}-0${month}-${year} ${hour}:${min}:${sec}`;
+  }
 }
