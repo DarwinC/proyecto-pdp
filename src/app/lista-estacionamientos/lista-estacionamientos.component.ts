@@ -113,12 +113,14 @@ export class ListaEstacionamientosComponent implements OnInit {
     let fechaDate = new Date(fecha);
 
     let day = fechaDate.getDate();
-    let month = fechaDate.getMonth() + 1;
+    let month = ((fechaDate.getMonth() + 1)<10)?'0'+(fechaDate.getMonth() + 1).toString():(fechaDate.getMonth() + 1).toString();
     let year = fechaDate.getFullYear();
-    let hour = fechaDate.getHours();
-    let min = fechaDate.getMinutes();
-    let sec = fechaDate.getSeconds();
-    console.log(`${day}-0${month}-${year} ${hour}:${min}:${sec}`);
-    return `${day}-0${month}-${year} ${hour}:${min}:${sec}`;
+    let hour = (fechaDate.getHours()<10)?'0'+(fechaDate.getHours()).toString():fechaDate.getHours().toString();
+
+    let min = (fechaDate.getMinutes()<10)?'0'+(fechaDate.getMinutes()).toString():fechaDate.getMinutes().toString();
+    let sec = (fechaDate.getSeconds()<10)?'0'+(fechaDate.getSeconds()).toString():fechaDate.getSeconds().toString();
+
+    console.log(`${day}-${month}-${year} ${hour}:${min}:${sec}`);
+    return `${day}-${month}-${year} ${hour}:${min}:${sec}`;
   }
 }
